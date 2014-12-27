@@ -1,7 +1,66 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+<div id="coming-soon" class="coming-soon">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="site-title">
+                    <h1>Moto Story</h1>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="site-lead">
+                    <p>Want to find a future, there are plans, there are quantifiable record of life, for me it is important numbers, or bits and pieces of the process. In addition, the website where the Chinese font ugly ... had to use English to maintain the beauty of the page.</p>
+                    <p>Do not ask why I called "locomotive Story"?</p>
+                    <p>Because you can not ask me, "Why?" Haha...</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div id="countdown"></div>
+            </div>
+            <div class="col-md-12">
+                <p>
+                    <a class="scroll-down" id="btnway" href="javascript:"><i class="fa fa-angle-double-down"></i></a>
+                </p>
+            </div>
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- #coming-soon -->
+<div id="contact" style="display:none;">
+    <div class="section light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>DO NOT Give Me Any Feedback</h2>
+                    </div>
+                </div>
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .section light -->
+    <div class="section gmap">
+        <div class="subscribe wow fadeInUp animated">
+            <div class="container">
+                <div class="row">
+                    <form class="sb-form" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="Declare">Declare</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- .section gmap -->
+</div>
+@section scripts {
+    <script>
+        $(function () {
+            $("#btnway").click(function () {
+                $("#contact").fadeIn(3000);
+            });
+        });
+    </script>
+}
