@@ -4,12 +4,12 @@
 <div id="coming-soon" class="coming-soon">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 shadow">
                 <div class="site-title">
                     <h1>Moto Story</h1>
                 </div>
             </div>
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2 shadow">
                 <div class="site-lead">
                     <p>Want to find a future, there are plans, there are quantifiable record of life, for me it is important numbers, or bits and pieces of the process. In addition, the website where the Chinese font ugly ... had to use English to maintain the beauty of the page.</p>
                     <p>Do not ask why I called "locomotive Story"?</p>
@@ -19,9 +19,9 @@
             <div class="col-md-12">
                 <div id="countdown"></div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12" id="btnway">
                 <p>
-                    <a class="scroll-down" id="btnway" href="javascript:"><i class="fa fa-angle-double-down"></i></a>
+                    <a class="scroll-down" href="javascript:"><i class="fa fa-angle-double-down"></i></a>
                 </p>
             </div>
         </div><!-- .row -->
@@ -49,7 +49,7 @@
                         <div class="form-group">
                             <label class="sr-only" for="Declare">Declare</label>
                             @Html.Password("p", "", new Dictionary<string, object>() { { "id", "p" }, { "class", "form-control" }, { "placeholder", "Password" } })
-                        </div>                       
+                        </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     }
                 </div>
@@ -57,13 +57,29 @@
         </div>
     </div><!-- .section gmap -->
 </div>
-@section scripts {
-    <script>
-        $(function () {
-            $("#btnway").click(function () {
-                $("#contact").fadeIn(2000, function () { $("#p").focus(); });
-                $("html, body").animate({ scrollTop: $(document).height() }, 3000);               
+@using MaxiMvc5.Models;
+@if (!string.IsNullOrWhiteSpace(csWay.CurrentUserName))
+{
+    @section scripts {
+        <script>
+            $(function () {
+                $("#btnway").click(function () {
+                    window.location.href = "/Way/Way";
+                });
             });
-        });
-    </script>
+        </script>
+    }
+}
+else
+{
+    @section scripts {
+        <script>
+            $(function () {
+                $("#btnway").click(function () {
+                    $("#contact").fadeIn(2000, function () { $("#p").focus(); });
+                    $("html, body").animate({ scrollTop: $(document).height() }, 3000);
+                });
+            });
+        </script>
+    }
 }
