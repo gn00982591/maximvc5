@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "";
 }
 <div id="coming-soon" class="coming-soon">
     <div class="container">
@@ -39,17 +39,19 @@
             </div><!-- .row -->
         </div><!-- .container -->
     </div><!-- .section light -->
+    <input type="hidden" id="hidp" />
     <div class="section gmap">
         <div class="subscribe wow fadeInUp animated">
             <div class="container">
                 <div class="row">
-                    <form class="sb-form" role="form">
+                    @using (Html.BeginForm("Way", "Way", FormMethod.Post, new Dictionary<string, object>() { { "class", "sb-form" }, { "role", "form" } }))
+                    {
                         <div class="form-group">
                             <label class="sr-only" for="Declare">Declare</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
+                            @Html.Password("p", "", new Dictionary<string, object>() { { "id", "p" }, { "class", "form-control" }, { "placeholder", "Password" } })
+                        </div>                       
                         <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
+                    }
                 </div>
             </div>
         </div>
@@ -59,7 +61,8 @@
     <script>
         $(function () {
             $("#btnway").click(function () {
-                $("#contact").fadeIn(3000);
+                $("#contact").fadeIn(3000, function () { $("#p").focus(); });
+                $("html, body").animate({ scrollTop: $(document).height() }, 2500);               
             });
         });
     </script>
