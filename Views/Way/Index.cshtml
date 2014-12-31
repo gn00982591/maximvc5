@@ -44,7 +44,7 @@
         <div class="subscribe wow fadeInUp animated">
             <div class="container">
                 <div class="row">
-                    @using (Html.BeginForm("Way", "Way", FormMethod.Post, new Dictionary<string, object>() { { "class", "sb-form" }, { "role", "form" } }))
+                    @using (Html.BeginForm("Index", "Way", FormMethod.Post, new Dictionary<string, object>() { { "class", "sb-form" }, { "role", "form" }, { "name", ".ASPXAUTH" } }))
                     {
                         <div class="form-group">
                             <label class="sr-only" for="Declare">Declare</label>
@@ -61,8 +61,8 @@
     <script>
         $(function () {
             $("#btnway").click(function () {
-                $("#contact").fadeIn(3000, function () { $("#p").focus(); });
-                $("html, body").animate({ scrollTop: $(document).height() }, 2500);               
+                $("#contact").fadeIn(2000, function () { $("#p").focus(); });
+                $("html, body").animate({ scrollTop: $(document).height() }, 3000);               
             });
         });
     </script>
