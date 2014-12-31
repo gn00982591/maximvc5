@@ -19,29 +19,17 @@
             <div class="col-md-12">
                 <div id="countdown"></div>
             </div>
-            <div class="col-md-12" id="btnway">
-                <p>
+            <div class="col-md-12">
+                <p id="btnway">
                     <a class="scroll-down" href="javascript:"><i class="fa fa-angle-double-down"></i></a>
                 </p>
             </div>
         </div><!-- .row -->
     </div><!-- .container -->
 </div><!-- #coming-soon -->
-<div id="contact" style="display:none;">
-    <div class="section light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title">
-                        <h2>DO NOT Give Me Any Feedback</h2>
-                    </div>
-                </div>
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .section light -->
-    <input type="hidden" id="hidp" />
+<div>
     <div class="section gmap">
-        <div class="subscribe wow fadeInUp animated">
+        <div class="subscribe wow fadeInUp animated" id="contact" style="display:none;">
             <div class="container">
                 <div class="row">
                     @using (Html.BeginForm("Index", "Way", FormMethod.Post, new Dictionary<string, object>() { { "class", "sb-form" }, { "role", "form" }, { "name", ".ASPXAUTH" } }))
