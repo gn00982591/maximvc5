@@ -582,14 +582,15 @@ h4 {
     }
 }
 
-#logout {
+#mainmenu {
     position: fixed;
-    top: 10px;
+    top: 225px;
     right: 25px;
     _position: absolute; /* position fixed for IE6 */
     _top: expression(documentElement.scrollTop+"px");
     z-index: 1;
 }
+
 
 .shadow {
     text-shadow: #000000 0px 2px, #000000 2px 0px, #000000 -2px 0px, #000000 0px -2px, #000000 -1.4px -1.4px, #000000 1.4px 1.4px,#000000 1.4px -1.4px, #000000 -1.4px 1.4px;

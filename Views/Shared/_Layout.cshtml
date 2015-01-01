@@ -23,11 +23,24 @@
         @using MaxiMvc5.Models;
         @if (!string.IsNullOrWhiteSpace(csWay.CurrentUserName))
         {
-            <div id="logout" title="WayOut" class="shadow">
-                <p>
-                    <a class="scroll-down" href="@Url.Action("WayOut", "Way")"><i class="fa fa-sign-out"></i></a>
-                </p>
+            <div id="mainmenu" >
+                <div title="Menu" class="feature wow fadeInUp animated">
+                    <div class="feature-icon">
+                        <a href="javascript:void();"><i class="fa fa-cog"></i></a>
+                    </div>
+                </div>
+                <div title="設定" class="feature wow fadeInUp animated">
+                    <div class="feature-icon">
+                        <a href="javascript:void();"><i class="fa fa-cog"></i></a>
+                    </div>
+                </div>
+                <div id="logout" title="登出">
+                    <p>
+                        <a class="scroll-down" href="@Url.Action("WayOut", "Way")"><i class="fa fa-sign-out"></i></a>
+                    </p>
+                </div>
             </div>
+
         }
         @RenderBody()
         <div class="footer">
@@ -43,7 +56,7 @@
     <!-- Javascript files -->
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery-ui")
-        @*@Scripts.Render("~/bundles/modernizr")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/jquery.backstretch-2.0.4.min.js"></script>
     <script src="~/Scripts/wow-1.0.2.min.js"></script>
