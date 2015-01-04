@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/icon.ico" rel="shortcut icon" />
     <title>@ViewBag.Title Moto Sotry</title>
-    @*@Styles.Render("~/Content/css")
-        @Styles.Render("~/Content/themes/base/css")
-        @Styles.Render("~/Content/themes/sunny/css")*@
+    @*@Styles.Render("~/Content/css")*@
     <link href="~/Content/Tyumen/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" media="screen">
     <link href="~/Content/animate.min.css" rel="stylesheet" media="screen">
@@ -16,31 +14,48 @@
 </head>
 <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <div id="preloader" title="Loading...">
         <div id="status"></div>
     </div>
     <div class="wrapper">
         @using MaxiMvc5.Models;
         @if (!string.IsNullOrWhiteSpace(csWay.CurrentUserName))
         {
-            <div id="mainmenu" >
-                <div title="Menu" class="feature wow fadeInUp animated">
-                    <div class="feature-icon">
-                        <a href="javascript:void();"><i class="fa fa-cog"></i></a>
-                    </div>
-                </div>
-                <div title="設定" class="feature wow fadeInUp animated">
-                    <div class="feature-icon">
-                        <a href="javascript:void();"><i class="fa fa-cog"></i></a>
-                    </div>
-                </div>
-                <div id="logout" title="登出">
-                    <p>
-                        <a class="scroll-down" href="@Url.Action("WayOut", "Way")"><i class="fa fa-sign-out"></i></a>
-                    </p>
-                </div>
+            <div id="mainmenu">
+                <table>
+                    <tr>
+                        <td>
+                            <div id="menu" title="表單" class="feature wow fadeInUp animated">
+                                <a href="javascript:void();"><i class="feature-icon"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="list">
+                        <td>
+                            @using (var db = new DBEntities())
+                            {
+                                foreach (var i in db.tUrl.Where(s => s.cUpId == 0 && s.cEnable).OrderBy(s => s.cSort))
+                                {
+                                    <div title="@i.cName" class="feature wow fadeInUp animated">
+                                        <div class="feature-icon">
+                                            <a href="@Url.Action(i.cPage, i.cFolder)"><i class="fa fa-cog"></i></a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="logout" title="登出">
+                                <p>
+                                    <a class="scroll-down" href="@Url.Action("WayOut", "Way")"><i class="fa fa-sign-out"></i></a>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
-
         }
         @RenderBody()
         <div class="footer">

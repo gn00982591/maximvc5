@@ -4,8 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="136940fde0d1409b8418f88211c1fe4d" Name="Diagram1">
-        <EntityTypeShape EntityType="MvcDBModel.tCode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="4b952328f36d4cd1a7bd62f369eb4250" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.tCode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_tCode_tCode" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBModel.tUrl" Width="1.5" PointX="3.375" PointY="0.75" />
+        <AssociationConnector Association="DBModel.FK_tUrl_tUrl" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
