@@ -50,9 +50,7 @@
 {
     @section scripts {
         <script>
-            $(function () {
-                $("#btnway").click(function () { window.location.href = "/Way/Way"; });
-            });
+            $(window).load(function () { $("#btnway").click(function () { window.location.href = "/Way/Way"; }); });
         </script>
     }
 }
@@ -60,7 +58,7 @@ else
 {
     @section scripts {
         <script>
-            $(function () {
+            $(window).load(function () {
                 $("#btnway").click(function () {
                     $("#contact").fadeIn(2000, function () { $("#p").focus(); });
                     $("html, body").animate({ scrollTop: $(document).height() }, 3000);

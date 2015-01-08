@@ -1,0 +1,42 @@
+﻿<style type="text/css">
+    #myDiv ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap; /* 不斷行 */
+    }
+
+        #myDiv ul li {
+            margin: -2.5px;
+            display: inline; /* 水平排列 */
+        }
+
+            #myDiv ul li a {
+                vertical-align: top;
+                background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.5);
+                display: inline-block; /* 水平內顯示為區塊 */
+                padding: 15px 7px;
+                color: #B97;
+                text-decoration: none;
+                font-size: 18px;
+                line-height: 21px;
+                margin-right: 0;
+                margin-left: 0;
+            }
+
+                #myDiv ul li a:hover {
+                    color:#FFF;
+                }
+</style>
+<link href="~/Content/Hover.css" rel="stylesheet" media="screen" />
+<div id="myDiv">
+    <ul>
+        <li><a class="button hover-shadow" href="http://www.minwt.com">梅問題教學網</a></li>
+        <li><a class="button hover-shadow" href="http://blog.xuite.net/abgne/diary1">男丁格爾's 脫殼玩</a></li>
+        <li><a class="button hover-shadow" href="http://www.minwt.com/mimimore">迷迷小姐瞎拼more</a></li>
+        <li><a class="button hover-shadow" href="http://www.flycan.com">飛肯設計學苑</a></li>
+        <li><a class="button hover-shadow" href="http://www.google.com">程式逗設計</a></li>
+        <li><a class="button hover-shadow" href="http://www.wowgame.tw">挖!GAme</a></li>
+    </ul>
+</div>
+@PageData[0]
