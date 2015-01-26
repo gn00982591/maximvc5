@@ -1,0 +1,4 @@
+﻿@{
+    ViewBag.Title = Request.Url.LocalPath.Replace("/", "");
+}
+@RenderPage(MaxiMvc5.Models.csWay.getMenu, Request.Url.LocalPath.Replace("/","")) 
