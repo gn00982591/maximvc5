@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/icon.ico" rel="shortcut icon" />
-    <title>@ViewBag.Title Moto Sotry</title>
+    <title>@ViewBag.Title - Moto Sotry</title>
     @*@Styles.Render("~/Content/css")*@
     <link href="~/Content/Tyumen/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" media="screen">
@@ -34,7 +34,7 @@
                         <td>
                             @using (var db = new MVC())
                             {
-                                foreach (var i in db.tUrl.Where(s => s.cUpId == 0 && s.cEnable).OrderBy(s => s.cSort))
+                                foreach (var i in db.tUrl.Where(s => (s.cUpId == null || s.cUpId == 0) && s.cEnable).OrderBy(s => s.cSort))
                                 {
                                     <div title="@i.cName" class="feature wow fadeInUp animated">
                                         <div class="feature-icon">

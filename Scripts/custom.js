@@ -8,6 +8,7 @@
         $('#preloader').delay(350).fadeOut('slow');
         $('body').delay(350).css({ 'overflow': 'visible' });
         $('#countdown').addClass('animated bounceInDown');
+        $.backstretch('https://unsplash.imgix.net/reserve/URG2BbWQQ9SAcqLuTOLp_BP7A9947.jpg?q=75&fm=jpg&s=604dc379bd8749d90ca2b9c8ec270f63');
     });
 
     $(document).ready(function () {
@@ -34,7 +35,7 @@
         * Background slideshow
         */
         //$.backstretch('/Content/Tyumen/images/bg6.jpg');
-        $.backstretch('https://unsplash.imgix.net/photo-1419064642531-e575728395f2?q=75&fm=jpg&s=490dffe2e11f468947891ab40651e176');
+       
         /*
         * Reveal Animations When You Scroll
         */

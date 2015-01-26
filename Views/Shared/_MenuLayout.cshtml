@@ -25,18 +25,27 @@
             }
 
                 #myDiv ul li a:hover {
-                    color:#FFF;
+                    color: #FFF;
                 }
 </style>
 <link href="~/Content/Hover.css" rel="stylesheet" media="screen" />
 <div id="myDiv">
     <ul>
-        <li><a class="button hover-shadow" href="http://www.minwt.com">梅問題教學網</a></li>
-        <li><a class="button hover-shadow" href="http://blog.xuite.net/abgne/diary1">男丁格爾's 脫殼玩</a></li>
-        <li><a class="button hover-shadow" href="http://www.minwt.com/mimimore">迷迷小姐瞎拼more</a></li>
-        <li><a class="button hover-shadow" href="http://www.flycan.com">飛肯設計學苑</a></li>
-        <li><a class="button hover-shadow" href="http://www.google.com">程式逗設計</a></li>
-        <li><a class="button hover-shadow" href="http://www.wowgame.tw">挖!GAme</a></li>
+        @using MaxiMvc5.Models;
+        @if (PageData.Count() > 0)
+        {
+            using (var db = new MVC())
+            {
+                var x = (string)PageData.First().Value;
+                var li = db.tUrl.FirstOrDefault(s => s.cFolder == x && (s.cUpId == null || s.cUpId == 0) && s.cEnable);
+                if (li != null)
+                {
+                    foreach (var i in li.tUrl1.OrderBy(s => s.cSort))
+                    {
+                        <li><a class="button hover-shadow" href="@Url.Action(i.cPage, i.cFolder)">@i.cName</a></li>
+                    }
+                }
+            }
+        }
     </ul>
 </div>
-@PageData[0]
