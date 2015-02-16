@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    @using MaxiMvc5.Models;
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/icon.ico" rel="shortcut icon" />
-    <title>@ViewBag.Title - Moto Sotry</title>
+    <title>@csFunc.getPageName(Request) - Moto Sotry</title>
     @*@Styles.Render("~/Content/css")*@
     <link href="~/Content/Tyumen/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" media="screen">
@@ -17,8 +18,8 @@
     <div id="preloader" title="Loading...">
         <div id="status"></div>
     </div>
-    <div class="wrapper">
-        @using MaxiMvc5.Models;
+    <h3>@csFunc.getPageName(Request)</h3>
+    <div class="wrapper">        
         @if (!string.IsNullOrWhiteSpace(csWay.CurrentUserName))
         {
             <div id="mainmenu">

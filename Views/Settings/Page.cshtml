@@ -1,7 +1,30 @@
-﻿
-@{
-    ViewBag.Title = "Page";
-}
-@RenderPage(MaxiMvc5.Models.csWay.getMenu, Request.Url.LocalPath.Replace("/", "")) 
-<h2>Page</h2>
-
+﻿@model IEnumerable<MaxiMvc5.Models.tUrl>
+@RenderPage(MaxiMvc5.Models.csWay.getMenu, Request.Url.LocalPath.Replace("/", ""))
+<table>
+    <tr>
+        <th>PK</th>
+        <th>名稱</th>
+        <th>資料夾名稱</th>
+        <th>程式名稱</th>
+        <th>連結圖示</th>
+        <th>啟用</th>
+        <th>排序</th>
+        <th></th>
+    </tr>
+    @foreach (var i in Model.Where(s => (s.cUpId == null || s.cUpId == 0)))
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => i.cId)</td>
+            <td>@Html.DisplayFor(modelItem => i.cName)</td>
+            <td>@Html.DisplayFor(modelItem => i.cFolder)</td>
+            <td>@Html.DisplayFor(modelItem => i.cPage)</td>
+            <td>@Html.DisplayFor(modelItem => i.cIcon)</td>
+            <td>@Html.DisplayFor(modelItem => i.cEnable)</td>
+            <td>@Html.DisplayFor(modelItem => i.cSort)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = i.cId }) |
+                @Html.ActionLink("Details", "Details", new { id = i.cId }) |
+            </td>
+        </tr>
+    }
+</table>
